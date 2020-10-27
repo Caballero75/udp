@@ -30,6 +30,6 @@ class UdpHelper {
           port: Port(43211),
         ));
 
-    print("${dataLength} bytes sent.");
+    // print("${dataLength} bytes sent.");
   }
 }

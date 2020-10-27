@@ -18,18 +18,36 @@ class Home extends StatelessWidget {
       children: [
         Expanded(
           flex: 1,
-          child: Container(
-            color: Color(0xFF239DC2),
-            padding: EdgeInsets.all(12),
-            child: Text("Menu"),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Stack(
+                  children: [
+                    for (var i = 1; i < 25; i++)
+                      Container(
+                        padding: EdgeInsets.only(
+                          left: ((i - 1) * 50).toDouble(),
+                        ),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                          color: Colors.black,
+                          width: 1,
+                        )),
+                      )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
         Expanded(
           flex: 5,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Keyboard(sender: sender),
-            // ,
+          child: Container(
+            color: Colors.pink[400],
+            child: Keyboard(
+              sender: sender,
+            ),
           ),
         ),
       ],

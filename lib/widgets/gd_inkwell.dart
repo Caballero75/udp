@@ -7,12 +7,20 @@ class GDImkwell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: RaisedButton(
+        animationDuration: Duration(milliseconds: 200),
+        // highlightColor: Colors.red[200],
+        colorBrightness: Brightness.dark,
+        splashColor: Colors.black54,
+        hoverColor: Colors.teal,
+        color: Colors.red[700],
+        // onLongPress: () => {},
         onPressed: () => print("object"),
         child: GestureDetector(
-          onTapUp: (_) => print("onTapUp"),
+          onTapUp: (details) => print("onTapUp"),
           onTapDown: (details) => print("tapDown"),
-          onLongPress: () => print("long_Press"),
-          onLongPressEnd: (details) => print(details.globalPosition),
+          onPanStart: (details) {},
+          // onLongPress: () => {},
+          // onLongPressEnd: (details) => print(details.globalPosition),
           child: Container(
             width: 200,
             height: 200,

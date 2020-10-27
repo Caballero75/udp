@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:udp/udp.dart';
-import './widgets/gd_inkwell.dart';
+import './screens/custom_paint_path.dart';
 import './screens/home.dart';
+import './services/JsonParseDemo.dart';
 import './services/udp_helper.dart';
 
 void main() {
@@ -16,12 +17,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'U D P',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SafeArea(
         child: Scaffold(
-          body: GDImkwell(),
+          body: JasonParseDemo(), //Home(),
         ),
       ),
     );
@@ -72,7 +73,9 @@ class _UdpInitWidgetState extends State<UdpInitWidget> {
                     ),
               Expanded(
                 flex: 5,
-                child: Home(),
+                child: Home(
+                  sender: snapshot.data,
+                ),
               ),
             ],
           );
